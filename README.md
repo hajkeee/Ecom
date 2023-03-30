@@ -1,7 +1,7 @@
 # E-Commerce dataLayer for GA4 and GTM
 
 ### Zadanie rekrutacyjne Digital Analyst
-  ### Referencje
+  ### Referenсes 
 - [Data Layer](https://developers.google.com/tag-platform/devguides/datalayer?hl=en)
 - [GA4 Events](https://developers.google.com/analytics/devguides/collection/ga4/reference/events)
 - [GA4 Objects schema](https://support.google.com/analytics/answer/10119380?hl=en)
@@ -10,7 +10,7 @@
 ### GA4 Events (implementation via source code and datalayer)
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| view_item | Tracking the display of a product |
+| view_item | To measure how many times item details are viewed, send a view_item event whenever a user views an item’s details screen. |
 ## gtag Implementation Example:
 ```html
 gtag("event",  "view_item",  {
@@ -45,7 +45,7 @@ dataLayer.push({
 ##
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| add_to_cart | Tracking the display of a product |
+| add_to_cart | To measure when someone adds merchandise to their shopping cart as a conversion, you need to set up the add_to_cart event on your website or app. |
 
 ## gtag Implementation Example:
 ```html
@@ -89,7 +89,7 @@ dataLayer.push({
 
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| remove_from_cart | Tracking the display of a product |
+| remove_from_cart | To measure when a user removes an item from a cart, send the remove_from_cart event. |
 
 ## gtag Implementation Example:
 ```html
@@ -132,7 +132,7 @@ dataLayer.push({
 ```
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| begin_checkout | Tracking the display of a product |
+| begin_checkout | Measure the first step in a checkout process by sending a begin_checkout event with one or more items defined with the relevant fields. A coupon can also be added at this stage to the entire order by adding it to the event or applied to a particular item by adding it to specific elements in the items array. |
 
 ## gtag Implementation Example:
 ```html
@@ -175,7 +175,7 @@ dataLayer.push({
 ```
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| add_shipping_info | Tracking the display of a product |
+| add_shipping_info | When a user proceeds to the next step in the checkout process and adds shipping information, send an add_shipping_info event.  |
 
 ## gtag Implementation Example:
 ```html
@@ -218,13 +218,14 @@ dataLayer.push({
 ```
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| add_payment_info | Tracking the display of a product |
+| add_payment_info | Send the add_payment_info event when a user submits their payment information. If applicable, include payment_type with this event for the chosen method of payment |
 
 ## gtag Implementation Example:
 ```html
 gtag("event",  "add_payment_info",  {
   "value": 31,
   "currency": "USD",
+  "payment_type": "Credit Card"
   "items": [{
     "item_id": "7w9e0",
     "item_name": "Masons T-Shirt",
@@ -261,7 +262,7 @@ dataLayer.push({
 ```
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| add_payment_info | Tracking the display of a product |
+| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields |
 
 ## gtag Implementation Example:
 ```html
