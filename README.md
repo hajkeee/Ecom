@@ -309,3 +309,43 @@ dataLayer.push({
   }
 });
 ```
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| Refund | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields |
+
+## gtag Implementation Example:
+```html
+gtag("event",  "refund",  {
+  "transaction_id": "830a4060-d399-4f0a-9f0c-bca693f3a1f2",
+  "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+}]
+});
+```
+## DataLayer Implementation Example:
+```html 
+dataLayer.push({
+   "event":  "refund",
+   "ecommerce":  {
+    "transaction_id": "830a4060-d399-4f0a-9f0c-bca693f3a1f2",
+    "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+}]
+});
+```
