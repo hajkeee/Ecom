@@ -130,3 +130,181 @@ dataLayer.push({
   }
 });
 ```
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| begin_checkout | Tracking the display of a product |
+
+## gtag Implementation Example:
+```html
+gtag("event",  "begin_checkout",  {
+  "value": 31,
+  "currency": "USD",
+  "items": [{
+    "item_id": "7w9e0",
+    "item_name": "Masons T-Shirt",
+    "price": "31.00",
+    "quantity": 1,
+    "item_brand": "Masons",
+    "item_category": "T-Shirts",
+    "item_variant": "red",
+    "index": 0,
+    "size": "M"
+  }]
+});
+```
+## DataLayer Implementation Example:
+```html 
+dataLayer.push({
+   "event":  "begin_checkout",
+   "ecommerce":  {
+    "value": 31,
+    "currency": "USD",
+    "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+    }]
+  }
+});
+```
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| add_shipping_info | Tracking the display of a product |
+
+## gtag Implementation Example:
+```html
+gtag("event",  "add_shipping_info",  {
+  "value": 31,
+  "currency": "USD",
+  "items": [{
+    "item_id": "7w9e0",
+    "item_name": "Masons T-Shirt",
+    "price": "31.00",
+    "quantity": 1,
+    "item_brand": "Masons",
+    "item_category": "T-Shirts",
+    "item_variant": "red",
+    "index": 0,
+    "size": "M"
+  }]
+});
+```
+## DataLayer Implementation Example:
+```html 
+dataLayer.push({
+   "event":  "add_shipping_info",
+   "ecommerce":  {
+    "value": 31,
+    "currency": "USD",
+    "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+    }]
+  }
+});
+```
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| add_payment_info | Tracking the display of a product |
+
+## gtag Implementation Example:
+```html
+gtag("event",  "add_payment_info",  {
+  "value": 31,
+  "currency": "USD",
+  "items": [{
+    "item_id": "7w9e0",
+    "item_name": "Masons T-Shirt",
+    "price": "31.00",
+    "quantity": 1,
+    "item_brand": "Masons",
+    "item_category": "T-Shirts",
+    "item_variant": "red",
+    "index": 0,
+    "size": "M"
+  }]
+});
+```
+## DataLayer Implementation Example:
+```html 
+dataLayer.push({
+   "event":  "add_payment_info",
+   "ecommerce":  {
+    "value": 31,
+    "currency": "USD",
+    "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+    }]
+  }
+});
+```
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| add_payment_info | Tracking the display of a product |
+
+## gtag Implementation Example:
+```html
+gtag("event",  "purchase",  {
+  "transaction_id": "84b49088-1c34-4a6b-8d85-28f0f3b6a7e9",
+  "currency": "USD",
+  "tax": 5,
+  "shipping": 5,
+  "value": 41,
+  "items": [{
+    "item_id": "7w9e0",
+    "item_name": "Masons T-Shirt",
+    "price": "31.00",
+    "quantity": 1,
+    "item_brand": "Masons",
+    "item_category": "T-Shirts",
+    "item_variant": "red",
+    "index": 0,
+    "size": "M"
+  }]
+});
+```
+## DataLayer Implementation Example:
+```html 
+dataLayer.push({
+   "event":  "purchase",
+   "ecommerce":  {
+    "transaction_id": "84b49088-1c34-4a6b-8d85-28f0f3b6a7e9",
+    "currency": "USD",
+    "tax": 5,
+    "shipping": 5,
+    "value": 41,
+    "items": [{
+      "item_id": "7w9e0",
+      "item_name": "Masons T-Shirt",
+      "price": "31.00",
+      "quantity": 1,
+      "item_brand": "Masons",
+      "item_category": "T-Shirts",
+      "item_variant": "red",
+      "index": 0,
+      "size": "M"
+    }]
+  }
+});
+```
