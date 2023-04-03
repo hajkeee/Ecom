@@ -40,10 +40,15 @@
   
    ### List of tracking implementations that should be implemented for the specific eCommerce store
    Regarding tracking list that should be implemented, I don't what to create massive list of all available events, because it will be copy - paste from Google            documentation, so I will provide only once peace of code and all neccessary events for Ecommerce:
+   
+| Event Name | 
+| ---------- | 
+| view_item, view_item_list, select_item, add_to_cart, remove_from_cart, view_cart, begin_checkout, add_payment_info, add_shipping_info, purchase, refund, internal_promotion|
+
   
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields |
+| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields. The same apporach may be used for all events. Doceumentation in references section. |
 
 ## gtag Implementation Example:
 ```html
