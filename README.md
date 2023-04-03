@@ -350,13 +350,3 @@ dataLayer.push({
 }]
 });
 ```
-## Refund - Answer regarding question from file.
-Previously, I mostly worked with small sales sites, so I didn't prioritize handling refunds. In the past, when there were multiple refund requests, I would use a measurement protocol and input purchase information with a "-" value or simply sent information from Google Console. 
-```html 
-gtag("event",  "refund",  {
-  "transaction_id": "830a4060-d399-4f0a-9f0c-bca693f3a1f2",
-  "items": []
-});
-
-```
-However, from my perspective, a better solution would be to create a refund thank-you page where a refund event is triggered, providing information about the refunded products in an array in the case of multiple items. As per example from tagging request.
