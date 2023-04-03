@@ -40,11 +40,16 @@
   
    ### List of tracking implementations that should be implemented for the specific eCommerce store
    Regarding tracking list that should be implemented, I don't what to create massive list of all available events, because it will be copy - paste from Google            documentation, so I will provide only once peace of code and all neccessary events for Ecommerce:
-   
-| Event Name | 
-| ---------- | 
-| view_item, view_item_list, select_item, add_to_cart, remove_from_cart, view_cart, begin_checkout, add_payment_info, add_shipping_info, purchase, refund, internal_promotion|
-
+| Event Name | Explanation | 
+| ---------- | ----------- | 
+| view_item  | To measure how many times item details are viewed, send a view_item event whenever a user views an item’s details screen. |
+| add_to_cart| To measure when someone adds merchandise to their shopping cart as a conversion, you need to set up the add_to_cart event your website. |
+| remove_from_cart | To measure when a user removes an item from a cart. |
+| begin_checkout  | Measure the first step in a checkout process by sending a begin_checkout event with one or more items defined with the relevant fields. A coupon can also be added at this stage to the entire order by adding it to the event or applied to a particular item by adding it to specific elements in the items array. | 
+| add_shipping_info | When a user proceeds to the next step in the checkout process and adds shipping information. | 
+| add_payment_info  | Send the add_payment_info event when a user submits their payment information. If applicable, include payment_type with this event for the chosen method of payment. |
+| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields. The same apporach may be used for all events. Doceumentation in references section. |
+| Refund | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields |
   
 | Event Name | Explanation | 
 | ---------- | ----------- | 
