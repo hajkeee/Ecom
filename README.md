@@ -26,16 +26,16 @@
    In this paragraph, I would like to summarize/convert my answers to the previous question. 
    As I mentioned earlier, I believe that for this type of business, the most important indicator of success is revenue. Revenue, in turn, depends on the factors I        described in the previous question. Namely:
 
-  1. Set up the connection between Google Search Console and Google Analytics 4 to recive information about CWV. Core Web Vitals are a set of metrics that measure how      users experience the speed, responsiveness, and visual stability of website. [https://web.dev/learn-core-web-vitals/](https://web.dev/learn-core-web-vitals/).          This will provide us with a better understanding of how the website is performing and allow us to identify any areas that need improvement.
+  1. Set up the connection between Google Search Console and Google Analytics 4 to recive information about CWV. Core Web Vitals are a set of metrics that measure how      users experience the speed, responsiveness, and visual stability of website. [web.dev](https://web.dev/learn-core-web-vitals/).          This will provide us with a better understanding of how the website is performing and allow us to identify any areas that need improvement.
   2. This point relates to the overall evaluation of the store, but I believe that tracking complaint and return forms can be set up. This way, the analytics                department can determine if there is an issue with the product, return process, or even a single user repeatedly filling out complaint forms, indicating that the      website support is not handling their job adequately. Keep in mind, this is just my personal overview on this process.
   3. This point partially relates to the answer in the previous question. In order to understand if the user is having any issues with making a purchase on the              website, for example, I would suggest tracking all error events on the site (red banners indicating incorrect information or any errors related to purchasing a        product). Tracking error events on the website can help identify which specific fields or areas may be difficult for users, providing valuable insights for the        development and UI teams. For instance, at our bank, we noticed that many users were encountering issues with entering their ZIP code (which is a common problem        in the UK), so we highlighted it as an area for improvement for our developers and UI team. They then implemented an automatic search for ZIP codes and added          tooltips at every step of the customer journey.
   4. While this topic may not directly relate to KPIs, it can still be helpful for analytics and marketing purposes. For instance, creating a remarketing audience for      Gmail, GDN, and other channels for people who have already completed a transaction can potentially help them make another purchase by offering incentives such as      free delivery or a discount.
   
  ### KPIs that will help to track the business objectives
    Regarding KPIs that will help to understand what going on, the most important:
-   1. Purchases - available in GA4 by default. - Conversion rate (including issues and compaints forms)
-   2. Avg. order value by user.
-   3. Conversion rate (including UI issues conversions rate and complaints forms)
+   1. Purchases - available in GA4 by default. - How many users complited purchase.
+   2. Avg. order value by user - tracks the average amount spent each time a customer places an order on a website.
+   3. Conversion rate (including UI issues conversions rate and complaints forms) - calculated by simply taking the number of conversions and dividing that by the          number of total ad interactions that can be tracked to a conversion during the same time period.
    4. Cart abandonment rate - tracks users who add items to their shopping cart but then leave the website.
   
    ### List of tracking implementations that should be implemented for the specific eCommerce store
@@ -53,7 +53,7 @@
   
 | Event Name | Explanation | 
 | ---------- | ----------- | 
-| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields. The same apporach may be used for all events. Doceumentation in references section. |
+| Purchase | Measure a purchase by sending a purchase event with one or more items defined with the relevant fields. The same apporach may be used for all events. Documentation in references section. |
 
 ## gtag Implementation Example:
 ```html
