@@ -100,6 +100,9 @@ dataLayer.push({
   }
 });
 ```
+
+![Alt text](tc.png)
+
   
   ### Referenсes 
 - [Data Layer](https://developers.google.com/tag-platform/devguides/datalayer?hl=en)
