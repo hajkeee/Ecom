@@ -1,0 +1,22 @@
+WITH path_data AS (
+  SELECT 
+    user_pseudo_id, 
+    event_bundle_sequence_id, 
+    traffic_source.source AS channel,
+    event_name
+  FROM `your_project.analytics_XXXXXX.events_*`
+  WHERE event_name IN ('session_start', 'purchase') 
+)
+
+SELECT 
+    channel,
+    COUNT(DISTINCT user_pseudo_id) AS assisted_conversions
+FROM path_data
+WHERE event_name = 'session_start'
+AND user_pseudo_id IN (
+    SELECT DISTINCT user_pseudo_id 
+    FROM path_data 
+    WHERE event_name = 'purchase'
+)
+GROUP BY channel
+ORDER BY assisted_conversions DESC;
