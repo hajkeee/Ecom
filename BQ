@@ -20,3 +20,60 @@ AND user_pseudo_id IN (
 )
 GROUP BY channel
 ORDER BY assisted_conversions DESC;
+
+
+
+
+WITH user_paths AS (
+  SELECT 
+    user_pseudo_id,
+    event_bundle_sequence_id,
+    traffic_source.source AS source,
+    traffic_source.medium AS medium,
+    event_name
+  FROM `your_project.analytics_XXXXXX.events_*`
+  WHERE event_name IN ('session_start', 'purchase')
+),
+
+first_touch AS (
+  SELECT 
+    user_pseudo_id,
+    source AS first_source,
+    medium AS first_medium
+  FROM user_paths
+  WHERE event_name = 'session_start'
+  QUALIFY ROW_NUMBER() OVER (PARTITION BY user_pseudo_id ORDER BY event_bundle_sequence_id ASC) = 1
+),
+
+last_touch AS (
+  SELECT 
+    user_pseudo_id,
+    source AS last_source,
+    medium AS last_medium
+  FROM user_paths
+  WHERE event_name = 'session_start'
+  QUALIFY ROW_NUMBER() OVER (PARTITION BY user_pseudo_id ORDER BY event_bundle_sequence_id DESC) = 1
+),
+
+ga4_attributed AS (
+  SELECT 
+    user_pseudo_id,
+    source AS ga4_source,
+    medium AS ga4_medium
+  FROM user_paths
+  WHERE event_name = 'purchase'
+)
+
+SELECT 
+  ft.user_pseudo_id,
+  ft.first_source,
+  ft.first_medium,
+  lt.last_source,
+  lt.last_medium,
+  ga.ga4_source,
+  ga.ga4_medium
+FROM first_touch ft
+LEFT JOIN last_touch lt ON ft.user_pseudo_id = lt.user_pseudo_id
+LEFT JOIN ga4_attributed ga ON ft.user_pseudo_id = ga.user_pseudo_id
+ORDER BY ft.user_pseudo_id;
+
